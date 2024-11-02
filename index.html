@@ -3,76 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Empfehlungsseite</title>
+    <title>Empfehlungsseite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* Grundlegende Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f7;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
             color: #333;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Header */
         header {
-            background-color: #1d3557;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
             color: #fff;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
+            font-weight: bold;
         }
         header p {
-            font-size: 1.1em;
-            color: #a8dadc;
+            font-size: 1.2em;
+            color: #f0f4f8;
+            margin-top: 10px;
         }
 
         /* Inhaltsbereich */
         .content {
-            padding: 30px 20px;
+            flex: 1;
+            padding: 40px 20px;
         }
         .content h2 {
-            color: #1d3557;
-            font-size: 1.5em;
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
         }
 
-        /* Karten für die Affiliate-Links */
+        /* Affiliate-Karten */
         .affiliate-card {
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            padding: 30px;
             margin: 20px auto;
-            width: 80%;
             max-width: 400px;
-            transition: transform 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
         }
         .affiliate-card:hover {
             transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
+        .affiliate-card h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .affiliate-card p {
+            font-size: 1em;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Logo und zusätzliche Infos */
+        .affiliate-info {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        .affiliate-info img {
+            width: 45px;
+            height: auto;
+        }
+        .affiliate-info p {
+            font-size: 0.9em;
+            color: #666;
+            margin: 0;
+            text-align: left;
+        }
+
+        /* QR-Code */
+        .qr-code {
+            margin: 20px auto;
+            padding: 10px;
+            border: 3px solid #ff9a9e;
+            border-radius: 12px;
+            background-color: #f6e9e9;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Link-Button */
         .affiliate-link {
-            display: block;
-            background-color: #e63946;
+            display: inline-block;
+            background-color: #ff6f61;
             color: #fff;
-            padding: 15px;
+            padding: 12px 24px;
             margin-top: 15px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: background-color 0.3s;
         }
         .affiliate-link:hover {
-            background-color: #d62828;
+            background-color: #ff4757;
         }
 
         /* Footer */
         footer {
-            background-color: #1d3557;
+            background-color: #66a6ff;
             color: #fff;
-            padding: 15px;
+            padding: 20px;
             font-size: 0.9em;
         }
     </style>
@@ -81,36 +138,75 @@
 
 <!-- Header mit Titel -->
 <header>
-    <h1>Willkommen auf meiner Empfehlungsseite. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen</h1>
-    <p>Finde hier exklusive Angebote bei Audible, Prime Video und mehr!</p>
+    <h1>Willkommen auf meiner Empfehlungsseite</h1>
+    <p>Als Amazon-Partner verdiene ich an qualifizierten Verkäufen</p>
 </header>
 
 <!-- Hauptinhalt mit Affiliate-Karten -->
 <div class="content">
     <h2>Meine Empfehlungen</h2>
 
+    <!-- Audible Karte -->
     <div class="affiliate-card">
         <h3>Audible Hörbücher entdecken</h3>
         <p>Genieße eine große Auswahl an Hörbüchern und Podcasts mit Audible.</p>
+        
+        <!-- Audible Logo und Beschreibung -->
+        <div class="affiliate-info">
+            <img src="https://logos-world.net/wp-content/uploads/2023/09/Audible-Emblem.png" alt="Audible Logo">
+            <p>Audible bietet dir tausende Hörbücher und exklusive Inhalte, die du überall und jederzeit genießen kannst.</p>
+        </div>
+        
+        <!-- QR-Code und Link -->
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://amzn.to/3NN48li&size=150x150" alt="Audible QR-Code">
+        </div>
+        
         <a href="https://amzn.to/3NN48li" class="affiliate-link" target="_blank">Jetzt anhören</a>
     </div>
 
+    <!-- Prime Video Karte -->
     <div class="affiliate-card">
         <h3>Prime Video jetzt ansehen</h3>
         <p>Erlebe Filme und Serien auf Abruf mit Prime Video.</p>
+        
+        <!-- Prime Video Logo und Beschreibung -->
+        <div class="affiliate-info">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Prime_Video.png/1024px-Prime_Video.png" alt="Prime Video Logo">
+            <p>Mit Prime Video hast du Zugriff auf eine riesige Auswahl an Filmen und Serien, von Klassikern bis zu aktuellen Blockbustern.</p>
+        </div>
+
+        <!-- QR-Code und Link -->
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://amzn.to/3UszL7C&size=150x150" alt="Prime Video QR-Code">
+        </div>
+        
         <a href="https://amzn.to/3UszL7C" class="affiliate-link" target="_blank">Jetzt streamen</a>
     </div>
 
+    <!-- Allgemeine Amazon Karte -->
     <div class="affiliate-card">
         <h3>Mehr Angebote auf Amazon</h3>
         <p>Entdecke eine Vielzahl an Produkten auf Amazon.</p>
+        
+        <!-- Amazon Logo und Beschreibung -->
+        <div class="affiliate-info">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" alt="Amazon Logo">
+            <p>Auf Amazon findest du eine breite Auswahl an Produkten, von Elektronik über Mode bis hin zu Haushaltsartikeln.</p>
+        </div>
+
+        <!-- QR-Code und Link -->
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://amzn.to/3AiytoP&size=150x150" alt="Amazon QR-Code">
+        </div>
+        
         <a href="https://amzn.to/3AiytoP" class="affiliate-link" target="_blank">Jetzt shoppen</a>
     </div>
 </div>
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2024 Meine Empfehlungsseite. Alle Rechte vorbehalten.</p>
+    <p>&copy; 2024 Empfehlungsseite. Alle Rechte vorbehalten.</p>
 </footer>
 
 </body>
